@@ -1,0 +1,124 @@
+@import './colors.scss';
+
+.container {
+    max-width: 1470px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 3rem;
+}
+
+.row {
+    padding: 0 1rem;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.card {
+    cursor: pointer;
+    max-width: 360px;
+    padding: 1rem 1rem;
+
+    & .image {
+        background-color: #482828;
+    }
+
+    & .category {
+        color: $red;
+        font-size: 0.8rem;
+        font-weight: 700;
+        padding: .75rem 0 .75rem;
+    }
+
+    & .stats {
+        display: flex;
+        flex-direction: row;
+        font-size: .75rem;
+        color: $darkgray;
+        padding: .75rem 0;
+
+        & .author {
+            color: $black;
+            font-weight: 600;
+        }
+
+        & .date {
+            font-weight: 400;
+
+            &::before {
+                content: '•';
+                color: $gray;
+                margin-inline: .25rem;
+            }
+        }
+
+        & .views {
+            font-weight: 400;
+
+            &::before {
+                content: '•';
+                ;
+                color: $gray;
+                margin-inline: .25rem;
+            }
+        }
+    }
+}
+
+.header {
+    font-size: 1.25rem;
+    font-weight: 700;
+}
+
+.description {
+    font-size: .8rem;
+    font-weight: 400;
+    color: $darkgray;
+    width: 100%;
+}
+
+.popupOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: $darkgray;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+.popup {
+    display: flex;
+    flex-direction: column;
+    background: $white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    max-width: 500px;
+    width: 100%;
+    box-shadow: 0 4px 6px $shadow;
+    position: relative;
+
+    &__row {
+        display: flex;
+        flex-direction: row;
+        margin-bottom: 2rem;
+        justify-content: space-between;
+    }
+}
+.close {
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+@media (max-width: 750px) {
+    .row {
+        justify-content: center;
+    }
+}
